@@ -1,0 +1,69 @@
+div {
+    color: red;
+    background: lawngreen;
+}
+
+#hi {
+    color: blue;
+    background: red;
+}
+
+.xin-chao {
+    color: green;
+    background: aqua;
+}
+
+/*chọn phần tử con cháu của một phần tử #parent đã biết*/
+#parent div {
+    background: red;
+    color: white
+}
+
+/*chọn phần tử con của một phần tử #parent đã biết*/
+#parent > div {
+    background: blue;
+    color: white;
+}
+
+/*chọn một phần tử nằm kế cận dưới một phần tử đã biết*/
+#me + div {
+    background: tomato;
+    color: white
+}
+
+/*chọn một tập phần tử nằm kế cận dưới một phần tử đã biết*/
+#me ~ div {
+    background: tomato;
+    color: white
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+    display: block;
+}
+
+a:hover {
+    color: red;
+}
+
+.demo-before:before{
+    content:"Hello, xin chao cac ban"
+}
+
+ul li:first-child{
+    background: red;
+}
+
+ul li:last-child{
+    background: red;
+}
+
+ul li:nth-child(2) {
+    background: red;
+}
+
+input[type="text"] {
+    border: 1px solid red;
+}

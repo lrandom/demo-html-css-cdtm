@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <div class="gran-parent">
+       <div class="parent">
+           <div class="child-1 child"></div>
+           <div class="child-2 child"></div>
+       </div>
+   </div>
+
+   <style>
+       .gran-parent {
+           position: relative;
+           width: 800px;
+           height: 800px;
+           border: 10px solid red;
+       }
+
+       .parent{
+           position: relative;
+           width: 500px;
+           height: 500px;
+           border: 10px solid red;
+       }
+
+       .child{
+           width: 200px;
+           height: 200px;
+           background: blue;
+       }
+
+       .child-2{
+           position: fixed;
+           right:0px;
+           bottom:0px;
+           background: yellow;
+       }
+   </style>
+
+</body>
+</html>

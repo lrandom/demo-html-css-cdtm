@@ -1,0 +1,50 @@
+.wrapper {
+    position: relative;
+    width: 987px;
+    overflow: hidden;
+    margin: 0px auto;
+}
+
+header,
+nav,
+.left-content,
+.main-content,
+.right-content,
+footer {
+    background: #e5e5e5;
+    text-align: center;
+    padding: 10px
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: 10px;
+}
+
+.content {
+    position: relative;
+    overflow: hidden;
+}
+
+.left-content {
+    width: 20%;
+    float: left;
+}
+
+.main-content {
+    width: 51%;
+    float: left;
+    margin-left: 1.5%
+}
+
+.right-content {
+    width: 20%;
+    float: right;
+}
