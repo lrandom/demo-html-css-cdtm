@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo JS</title>
+</head>
+<body>
+
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript">
+    /*CODE TRỰC TIẾP Ở ĐÂY*/
+
+    /*Đây là
+    dòng lệnh tạo biến a*/
+    //Đây là dòng lệnh tạo biến a
+
+    /* const a = 10;
+     const A = 10;*/
+
+    //quy tắc đặt tên (wording)
+    // camelCase
+    // PascalCase
+    // snake_case - under_score
+    // kebab-case my-name
+
+    /*  let myName = "Nguyễn Văn Linh";
+      let myName1 = 'Nguyễn Văn Linh';
+      let myName2 = `Nguyễn Văn Linh`; //ES6*/
+
+    //Định nghĩa biến
+    //var myName = "Nguyễn Văn Linh";
+    let age = 20;
+    const height = 1.73;
+    age += 10; // age = age + 10;
+    console.log(age);
+    console.log(10 / 2);//5
+    console.log(10 % 2);//0
+
+    //Toán tử so sánh
+    console.log(10 == "10");//true
+    console.log(10 === "10");//false
+    console.log(10 != 10);//false
+    console.log(10 < 20);//true
+    console.log(10 > 20);//false
+    console.log(10 <= 20);//true
+    console.log(10 >= 20);//false
+
+    //Toán tử logic
+    console.log(10 == "10" && 10 > 20); //false
+    console.log(10 == "10" || 10 > 20); //true
+    console.log(!true);//false
+    console.log(!false);//true
+
+    let weather = 'storm';
+    /*
+        if (weather == 'sunny') {
+            console.log('Stay at home');
+        }
+
+        if (weather == 'sunny') {
+            console.log('Stay at home');
+        } else {
+            console.log('Go outside');
+        }
+    */
+
+    /*if (weather == 'sunny') {
+        console.log('Stay at home');
+    } else if (weather == 'rainy') {
+        console.log('Stay at home and cooking food');
+    } else if (weather == 'snowy') {
+        console.log('Stay at home and drink coffe');
+    } else if (weather == 'cold') {
+        console.log('Stay at home and code');
+    }
+
+    switch (weather) {
+        case 'sunny':
+            console.log('Stay at home');
+            break;
+        case 'rainy':
+            console.log('Stay at home and cooking food');
+            break;
+        case 'snowy':
+            console.log('Stay at home and drink coffe');
+            break;
+        case 'cold':
+            console.log('Stay at home and code');
+            break;
+        default:
+            console.log('Go outside');
+    }*/
+
+
+    /*    let num = 10;
+        num++;
+        console.log(num);//10
+        console.log(num);//11
+
+        num = 10;
+        ++num;
+        console.log(num);//11*/
+
+
+    //vòng lặp biết trc số lần lặp
+    /*    for (let i = 0; i < 10; i++) {
+            console.log(i);
+        }*/
+
+    //vòng lặp không biết trước số lần lặp
+
+    /*
+        let num = 0;
+        while(num < 20){
+            console.log('Hello');
+            num++;
+        }
+
+        do {
+            console.log('Hello Do-while');
+            num++;
+        } while (num< 30);
+    */
+
+    /*    function forEach(arr, callback){
+            for (let i = 0; i < arr.length; i++) {
+                callback(arr[i],i);
+            }
+        }
+
+
+        forEach(a, function (item, index) {
+            console.log(item, index);
+        });*/
+    /*    const a = [1, 2, 3, 4, 5];
+        a.forEach(function (item, index) {
+            console.log(item);
+        });*/
+
+    /*    for (let i = 0; i < 60; i++) {
+            console.log(i);
+            if (i == 30) {
+                continue;
+            }
+        }*/
+
+    /*    let c= confirm('bạn có chắc muốn xoá không ?');
+        alert(c);*/
+
+    /*let d = prompt('Nhập vào một số');
+   alert(isNaN(d));*/
+
+    //cách chuẩn
+    function total(a, b) {
+        return a + b;
+    }
+
+    //gọi hàm -- invoke function --- call function
+    let c = total(10, 20);//30
+    let d = total(20, 30);//50
+
+    let totalCopy = total;
+    totalCopy(10, 20);//như một hàm
+
+    //hàm nặc danh - anonymous function
+    const total2 = function (a, b) {
+        return a + b;
+    }
+    total2(100, 10);
+
+    //tạo hàm bằng từ khoá new
+    const total3 = new Function('a', 'b', 'return a+b');
+    console.log(total3(10, 20));//30
+
+
+    //hàm mũi tên, có đặc điểm khác về context
+    const total4 = (a, b) => {
+        return a + b;
+    }
+
+    //callback function. rất linh động (flexible)
+    function higherOrderFunction(a, b, c, callback) {
+        let sum = a + b + c;
+        let sub = a - b - c;
+        let mul = a * b * c;
+        let div = a / b / c;
+        callback(sum, sub, mul, div);//hook
+    }
+
+    higherOrderFunction(10, 20, 30, (sum, sub, mul, div) => {
+        console.log(sum + sub + mul + div);
+    });
+
+    higherOrderFunction(10, 20, 30, (sum, sub, mul, div) => {
+        console.log(sum);
+        console.log(sub);
+        console.log(mul);
+        console.log(div)
+    });
+
+    higherOrderFunction(10, 20, 30, (sum, sub, mul, div) => {
+        let c = sum + sub + mul + div;
+        c = c / 2;
+        console.log(c)
+    });
+</script>
+</body>
+</html>
