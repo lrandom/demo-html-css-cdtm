@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Javascript Array</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];//cách đn 1
+    const arr2 = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); //cách đn 2
+
+    const arr3 = [];
+    for (let i = 0; i < 10; i++) {
+        arr3.push(i);
+    }
+
+    console.log(arr[0]);//1
+    console.log(arr[1]);//2
+    console.log(arr2[arr2.length-1]);//10
+
+    for (let i = 0; i < arr3.length; i++) {
+        console.log(arr3[i]);
+    }
+
+    arr3.forEach((value, index)=>{
+        console.log(value);
+    });
+
+    const arr4 = [1, "Luan", 2.5, true];
+    for (let i = 0; i < arr4.length; i++) {
+        console.log(arr4[i]);
+    }
+
+    //Định nghĩa đối tượng trong JS
+    const cat ={
+        'meo name':'Meo',
+        age:2,
+        action: function () {
+            console.log('Meo keu meow meow');
+        }
+    }
+    console.log(cat['meo name']);//Meo
+    cat.action();//Meo keu meow meow
+
+    console.log(cat['name']);//Meo
+    console.log(cat['age']);//2
+
+
+</script>
+</body>
+</html>

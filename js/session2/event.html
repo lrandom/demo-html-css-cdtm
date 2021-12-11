@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input onchange="onChange()" onfocus="onFocus()" onblur="onBlur()" type="text" id="name" placeholder="Enter your name">
+
+<div id="rect" onmouseover="onHover()" onmouseout="onOut()">
+
+      <form onsubmit="onSubmit()">
+          <input type="text" id="email" name="email" placeholder="Enter your email">
+          <button>Submit Form</button>
+      </form>
+</div>
+<script>
+    function onChange() {
+        const name = document.getElementById('name').value;
+        console.log(name);
+    }
+
+    function onHover() {
+        const rect = document.getElementById('rect');
+        rect.style.backgroundColor = 'red';
+    }
+
+    function onOut() {
+        const rect = document.getElementById('rect');
+        rect.style.backgroundColor = 'white';
+    }
+
+    function onFocus() {
+        console.log("focus");
+    }
+
+    function onBlur() {
+        console.log("blur");
+    }
+
+    function onSubmit() {
+        alert("Form submitted");
+    }
+</script>
+
+<style>
+    #rect{
+        width: 100px;
+        height: 100px;
+        border:1px solid red;
+        background: white;
+    }
+</style>
+</body>
+</html>

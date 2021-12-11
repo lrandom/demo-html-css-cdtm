@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="parent">
+    <span></span>
+</div>
+<button onclick="addHTML()">Thêm HTML</button>
+<button onclick="addText()">Thêm Text</button>
+<button onclick="getHTML()">Get HTML</button>
+<button id="btn-change-color-red">Change Color Red</button>
+
+<script type="text/javascript">
+    function addHTML() {
+        const parentNode = document.getElementById('parent');
+        const spanNode = parentNode.querySelector('span');//span
+        spanNode.innerHTML = '<strong>Hello các bạn</strong>';
+        //đẩy nội dung vào trong cặp thẻ span
+    }
+
+    function addText() {
+        const parentNode = document.getElementById('parent');
+        const spanNode = parentNode.querySelector('span');//span
+        spanNode.innerText = '<strong>Hello các bạn</strong>';
+    }
+
+    function getHTML() {
+        const parentNode = document.getElementById('parent');
+        const spanNode = parentNode.querySelector('span');//span
+        const html = spanNode.innerHTML;//lấy ra
+        alert(html);
+    }
+
+/*    function changeColorRed() {
+        const parentNode = document.getElementById('parent');
+        const spanNode = parentNode.querySelector('span');//span
+        spanNode.style.color = 'red';
+        spanNode.style.backgroundColor = 'blue';
+    }*/
+
+    const btnChangeColorRed = document.getElementById('btn-change-color-red');
+    btnChangeColorRed.addEventListener('click', function () {
+        const parentNode = document.getElementById('parent');
+        const spanNode = parentNode.querySelector('span');//span
+        spanNode.style.color = 'red';
+        spanNode.style.backgroundColor = 'blue';
+    });
+</script>
+</body>
+</html>

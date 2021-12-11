@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT 1</title>
+</head>
+<body>
+<script>
+    /*    const num = prompt("Vui lòng nhập vào một số nguyên");
+        let isFlag = true;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {
+                isFlag = false; //ko phải số nt
+                break;
+            }
+        }
+
+        if (isFlag) {
+            alert("Số nguyên tố");
+        } else {
+            alert("Không phải là số nguyên tố");
+        }*/
+
+    const num = prompt("Vui lòng nhập vào một số nguyên");
+    let sum = 0;
+    for (let i = 1; i < num; i++) {
+        if(num% i === 0){
+            sum += i; //cộng dồn tổng
+        }
+    }
+    if(sum == num){
+        alert("Số hoàn hảo");
+    }else{
+        alert("Không phải là số hoàn hảo");
+    }
+
+</script>
+</body>
+</html>

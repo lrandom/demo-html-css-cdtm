@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div></div>
+<div id="parent"></div>
+<div class="child"></div>
+<div class="bad-mood">Xin hãy xoá tôi đi, tôi chán đời lắm rồi</div>
+
+<div class="parent">
+    <div>Child1</div>
+    <div>Child2</div>
+    <div>Child3</div>
+    <div>Child4</div>
+</div>
+
+<img src=""/>
+
+<button>Click Me</button>
+<script>
+    $(document).ready(function () {
+        /*        const divNodes = document.querySelectorAll('div');
+                for (let i = 0; i < divNodes.length ; i++) {
+                    divNodes[i].innerHTML = '<span>Hello</span>';
+                }
+                $('div').html('<span>Hello</span>');*/
+        setTimeout(() => {
+            //$('.bad-mood').remove();
+            //$('.child').after('<div>hihi</div>');
+            //$('.parent').empty();
+            //$('.parent').append('<div>Child5</div>');
+          /*  $('img').attr('src',
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Hopetoun_falls.jpg/1200px-Hopetoun_falls.jpg');*/
+        }, 3000);
+
+        $('button').click(function (){
+            alert("You click me");
+        });
+    });
+</script>
+</body>
+</html>

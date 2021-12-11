@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>My Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+
+<div id="parent"></div>
+
+<div class="child"></div>
+<div class="child"></div>
+
+<button onclick="setText()">
+    Set Text
+</button>
+<script type="text/javascript">
+    function setText() {
+        const divs = document.getElementsByTagName('div');
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].innerHTML = 'Hello' + i;
+        }
+        const div = document.getElementById('parent');//trả 1 node (object) của div có id="parent"
+        div.innerHTML = 'Hello';
+
+        const childs = document.getElementsByClassName('child');//trả 1 mảng các node (object) của class="child"
+        for (let i = 0; i < childs.length; i++) {
+            childs[i].innerHTML = 'Hello' + i;
+        }
+
+        const childs2 = document.querySelectorAll('.child');//trả 1 mảng các node (object) của class="child"
+        for (let i = 0; i < childs2.length; i++) {
+            childs2[i].innerHTML = 'Hello' + i;
+        }
+    }
+</script>
+</body>
+</html>

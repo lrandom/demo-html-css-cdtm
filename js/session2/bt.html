@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate Form</title>
+</head>
+<body>
+<form onsubmit="return validate()">
+    <div class="email-field">
+        <input type="email" name="email" placeholder="Email">
+        <div class="error-line"></div>
+    </div>
+
+    <div class="username-field">
+        <input type="username" name="username" placeholder="Username">
+        <div class="error-line"></div>
+    </div>
+
+    <div class="password-field">
+        <input type="password" name="password" placeholder="Password">
+        <div class="error-line"></div>
+    </div>
+
+    <div class="fullname-field">
+        <input type="fullname" name="fullname" placeholder="Fullname">
+        <div class="error-line"></div>
+    </div>
+
+    <button>Submit</button>
+</form>
+
+<script>
+    function validate() {
+        //reset lại thông báo
+        const errorLineNodes = document.querySelectorAll('.error-line');
+        for (let i = 0; i < errorLineNodes.length; i++) {
+            errorLineNodes[i].innerHTML = '';
+        }
+        const email = document.querySelector('input[name="email"]').value;
+        if (email.length === 0) {
+            document.querySelector('.email-field > .error-line').innerHTML = 'Trường email là bắt buộc';
+            return false;
+        }
+
+        const username = document.querySelector('input[name="username"]').value;
+        if (username.length < 3) {
+            document.querySelector('.username-field > .error-line').innerHTML = 'Trường username phải có độ dài ít nhất là 3 ký tự';
+            return false;
+        }
+
+        const password = document.querySelector('input[name="password"]').value;
+        if (password.length < 6) {
+            document.querySelector('.password-field > .error-line').innerHTML = 'Trường password phải có độ dài ít nhất là 6 ký tự';
+            return false;
+        }
+
+        const fullName = document.querySelector('input[name="fullname"]').value;
+        if (fullName.length < 3) {
+            document.querySelector('.fullname-field > .error-line').innerHTML = 'Trường fullname phải có độ dài ít nhất là 3 ký tự';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+<style>
+    .error-line {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+</style>
+</body>
+</html>
