@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="content">
+
+</div>
+<button onclick="sendRequest()">Send Request</button>
+<script>
+    function sendRequest() {
+        /*const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost/ajax/index.php', true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                const responseText = xhr.responseText;
+                const responseArr = JSON.parse(responseText);
+
+                for (let i = 0; i < responseArr.length; i++) {
+                    const node = document.createElement('div');
+                    node.innerHTML = responseArr[i].name;
+                    document.getElementById('content').appendChild(node);
+                }
+
+                //document.getElementById('content').innerHTML = xhr.responseText;
+            }
+        }
+        xhr.send();*/
+        $.ajax({
+            url: 'http://localhost/ajax/index.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function (response) {
+                const responseArr = response;
+                for (let i = 0; i < responseArr.length; i++) {
+                    const node = document.createElement('div');
+                    node.innerHTML = responseArr[i].name;
+                    document.getElementById('content').appendChild(node);
+                }
+            },
+            error: function (error) {
+                alert("Lỗi rồi bạn ơi" + JSON.stringify(error));
+            }
+        });
+    }
+</script>
+</body>
+</html>
