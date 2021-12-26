@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //mẹ cho Luân 1000000
+    //Luân đi ăn KFC -100k (20p) demo 2s
+    //Luân đi áo ngắn tay - 250k (10p) demo 2s
+    //Luân đi xem phim - 100k (10p) demo 2s
+    //hỏi số tiền còn lại là bn
+    //minh hoạ các bước với promise chain
+
+    let money = 1000000;
+    new Promise((resolve, reject) => {
+        console.log('Đi ăn KFC');
+        setTimeout(() => {
+            resolve(money -= 100000);
+        }, 2000);
+    }).then((remindMoney) => {
+        console.log("Số tiền còn lại là " + remindMoney);
+        return new Promise((resolve, reject) => {
+            console.log('Đi mua áo ngắn tay');
+            setTimeout(() => {
+                resolve(remindMoney -= 250000);
+            }, 2000);
+        });
+    }).then((remindMoney) => {
+        console.log("Số tiền còn lại là " + remindMoney);
+        return new Promise((resolve, reject) => {
+            console.log('Đi xem phim');
+            setTimeout(() => {
+                resolve(remindMoney -= 100000);
+            }, 2000);
+        });
+    }).then((remindMoney) => {
+        console.log("Số tiền còn lại là " + remindMoney);
+    }).catch((err) => {
+        console.log(err);
+    });
+
+</script>
+</body>
+</html>

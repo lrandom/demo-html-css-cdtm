@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form onsubmit="return validate()">
+    <div>
+        <input name="user_name" class="user_name" type="text" placeholder="Username">
+        <div class="error"></div>
+    </div>
+
+    <div>
+        <input name="password" class="password" type="password" placeholder="Password">
+        <div class="error"></div>
+    </div>
+
+    <div>
+        <input name="email" class="email" type="email" placeholder="Email"/>
+        <div class="error"></div>
+    </div>
+
+    <button>Submit</button>
+</form>
+
+<script>
+    function validate() {
+        const erroNodes = document.querySelectorAll('.error');
+        erroNodes.forEach(node => node.innerHTML = '');
+        const userName = document.querySelector('.user_name').value;
+        if (userName.length < 3) {
+            document.querySelector('.user_name+.error').innerHTML = 'Username must be at least 3 characters long';
+            return false;
+        }
+
+        const password = document.querySelector('.password').value;
+        if (password.length < 6) {
+            document.querySelector('.password+.error').innerHTML = 'Password must be at least 6 characters long';
+            return false;
+        }
+
+        return true;
+    }
+</script>
+</body>
+</html>
